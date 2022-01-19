@@ -28,3 +28,15 @@ insert into items ( item_name, category, stock ) values
 ( "Fideos", 1, 20 ),
 ( "Leche", 2, 30 ),
 ( "Crema", 2, 30 );
+
+
+select * from items;
+
+
+delete from items where (id_item = 1);
+
+
+update items
+set stock = 45 where id_item = 2;
+
+
