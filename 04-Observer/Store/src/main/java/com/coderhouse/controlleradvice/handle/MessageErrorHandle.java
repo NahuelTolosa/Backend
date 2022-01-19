@@ -15,15 +15,9 @@ public class MessageErrorHandle {
 
     @ResponseBody
     @ExceptionHandler(ApiRestException.class)
-
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorMessage messageErrorHandle(ApiRestException ex) {
+    ErrorMessage messageErrorHandle(ApiRestException ex) {
         logger.error(ex);
-        return new ErrorMessage(ex.getMessage());
-    }
-
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ErrorMessage notFoundErrorHandler(ApiRestException ex) {
         return new ErrorMessage(ex.getMessage());
     }
 

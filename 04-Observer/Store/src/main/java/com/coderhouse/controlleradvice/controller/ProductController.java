@@ -1,6 +1,5 @@
 package com.coderhouse.controlleradvice.controller;
 
-import com.coderhouse.controlleradvice.handle.ApiRestException;
 import com.coderhouse.controlleradvice.model.Product;
 import com.coderhouse.controlleradvice.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +21,8 @@ public class ProductController {
     }
 
     @GetMapping(path = "/{id}")
-    public Product getProduct (@PathVariable String id ) throws ApiRestException {
-        Product p = productService.getProduct(id);
-
-        if(p == null) {
-            throw new ApiRestException("No existe un producto con ese ID");
-        }
-        return p;
+    public Product getProduct (@PathVariable String id ) {
+        return productService.getProduct(id);
     }
 
     @PostMapping
