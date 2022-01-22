@@ -1,0 +1,178 @@
+
+//Creación de DB 'ecommerce'.
+
+> use ecommerce
+
+/********************************EJERCICIO 1 Y EJERCICIO 2********************************/
+
+//Creación de colección de 'products' y documentos.
+
+> db.products.insertMany([{name: 'Producto1', price: 1000.0},
+                          {name: 'Producto2', price: 2000.0},
+                          {name: 'Producto3', price: 3000.0},
+                          {name: 'Producto4', price: 4000.0},
+                          {name: 'Producto5', price: 1500.0},
+                          {name: 'Producto6', price: 2500.0},
+                          {name: 'Producto7', price: 3500.0},
+                          {name: 'Producto8', price: 4500.0},
+                          {name: 'Producto9', price: 1700.0},
+                          {name: 'Producto10', price: 2700.0}])
+
+
+//Creación de colección de 'messages' y documentos.
+
+> db.messages.insertMany([{name: 'Mensaje1'},
+                          {name: 'Mensaje2'},
+                          {name: 'Mensaje3'},
+                          {name: 'Mensaje4'},
+                          {name: 'Mensaje5'},
+                          {name: 'Mensaje6'},
+                          {name: 'Mensaje7'},
+                          {name: 'Mensaje8'},
+                          {name: 'Mensaje9'},
+                          {name: 'Mensaje10'}])
+                          
+
+/*************************************EJERCICIO 3*************************************/
+             
+//Sentencia para mostar listado de documentos de la colección de 'products'.
+
+> db.products.find()
+{ "_id" : ObjectId("61eb52cb918abf44959283e0"), "name" : "Producto1", "price" : 1000 }
+{ "_id" : ObjectId("61eb52d6918abf44959283e1"), "name" : "Producto2", "price" : 2000 }
+{ "_id" : ObjectId("61eb52e2918abf44959283e2"), "name" : "Producto3", "price" : 3000 }
+{ "_id" : ObjectId("61eb52ec918abf44959283e3"), "name" : "Producto4", "price" : 4000 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b312"), "name" : "Producto5", "price" : 1500 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b313"), "name" : "Producto6", "price" : 2500 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b314"), "name" : "Producto7", "price" : 3500 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b315"), "name" : "Producto8", "price" : 4500 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b316"), "name" : "Producto9", "price" : 1700 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b317"), "name" : "Producto10", "price" : 2700 }
+
+
+//Sentencia para mostar listado de documentos de la colección de 'messages'.
+
+> db.messages.find()
+{ "_id" : ObjectId("61eb5522e1913095ab9fffbc"), "name" : "Mensaje1" }
+{ "_id" : ObjectId("61eb5522e1913095ab9fffbd"), "name" : "Mensaje2" }
+{ "_id" : ObjectId("61eb5522e1913095ab9fffbe"), "name" : "Mensaje3" }
+{ "_id" : ObjectId("61eb5522e1913095ab9fffbf"), "name" : "Mensaje4" }
+{ "_id" : ObjectId("61eb572a85f2933f8e16b318"), "name" : "Mensaje5" }
+{ "_id" : ObjectId("61eb572a85f2933f8e16b319"), "name" : "Mensaje6" }
+{ "_id" : ObjectId("61eb572a85f2933f8e16b31a"), "name" : "Mensaje7" }
+{ "_id" : ObjectId("61eb572a85f2933f8e16b31b"), "name" : "Mensaje8" }
+{ "_id" : ObjectId("61eb572a85f2933f8e16b31c"), "name" : "Mensaje9" }
+{ "_id" : ObjectId("61eb572a85f2933f8e16b31d"), "name" : "Mensaje10" }
+
+
+/*************************************EJERCICIO 4*************************************/
+
+//Contador de cantidad de documentos en la colección de 'products'.
+
+> db.products.count()
+10
+
+
+//Contador de cantidad de documentos en la colección de 'messages'.
+
+> db.messsages.count()
+10
+
+/*************************************EJERCICIO 5*************************************/
+
+//Se inserta un documento nuevo en la colección 'products'.
+
+> db.products.insertOne({name: 'Producto11', price: 3700.0})
+
+
+//Listar los productos con precio menor a 1000 pesos.
+
+> db.collection.find({price: {$lt:1000.0}})
+(No muestra resultado porque no hay productos que valgan menos de 1000 pesos)
+
+
+//Listar los productos con precio entre los 1000 a 3000 pesos.
+
+> db.products.find({ price: { $gt: 1000.0 }, price: { $lt: 3000.0 } })
+{ "_id" : ObjectId("61eb52cb918abf44959283e0"), "name" : "Producto1", "price" : 1000 }
+{ "_id" : ObjectId("61eb52d6918abf44959283e1"), "name" : "Producto2", "price" : 2000 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b312"), "name" : "Producto5", "price" : 1500 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b313"), "name" : "Producto6", "price" : 2500 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b316"), "name" : "Producto9", "price" : 1700 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b317"), "name" : "Producto10", "price" : 2700 }
+    
+    
+//Listar los productos con precio mayor a 3000 pesos.
+
+> db.products.find({ price: { $gt: 3000.0 } })
+{ "_id" : ObjectId("61eb52ec918abf44959283e3"), "name" : "Producto4", "price" : 4000 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b314"), "name" : "Producto7", "price" : 3500 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b315"), "name" : "Producto8", "price" : 4500 }
+{ "_id" : ObjectId("61eb5e4f85f2933f8e16b31e"), "name" : "Producto11", "price" : 3700 }
+
+
+//Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
+
+> db.products.find({}, { name: 1, _id: 0 }).skip(2).limit(1).sort({price:1})
+{ "name" : "Producto9" }
+
+    
+//Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
+
+> db.products.update({},{$set:{"stock":"100}},{upsert:false,multi:true})
+
+
+//Cambiar el stock a cero de los productos con precios mayores a 4000 pesos. 
+
+> db.products.updateMany({ price: {$lt: 4000.0} },{ $set: {stock: 0}},{})
+{ "_id" : ObjectId("61eb52cb918abf44959283e0"), "name" : "Producto1", "price" : 1000, "stock" : 0 }
+{ "_id" : ObjectId("61eb52d6918abf44959283e1"), "name" : "Producto2", "price" : 2000, "stock" : 0 }
+{ "_id" : ObjectId("61eb52e2918abf44959283e2"), "name" : "Producto3", "price" : 3000, "stock" : 0 }
+{ "_id" : ObjectId("61eb52ec918abf44959283e3"), "name" : "Producto4", "price" : 4000, "stock" : 100 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b312"), "name" : "Producto5", "price" : 1500, "stock" : 0 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b313"), "name" : "Producto6", "price" : 2500, "stock" : 0 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b314"), "name" : "Producto7", "price" : 3500, "stock" : 0 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b315"), "name" : "Producto8", "price" : 4500, "stock" : 100 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b316"), "name" : "Producto9", "price" : 1700, "stock" : 0 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b317"), "name" : "Producto10", "price" : 2700, "stock" : 0 }
+{ "_id" : ObjectId("61eb5e4f85f2933f8e16b31e"), "name" : "Producto11", "price" : 3700, "stock" : 0 }
+
+//Borrar los productos con precio menor a 1000 pesos
+
+> db.products.deleteMany({ price: { $lt: 1000.0} })
+> (No hubo cambios ya que no habia documentos con un precio menor a 1000.0)
+
+/*************************************EJERCICIO 6*************************************/
+
+//Crear un usuario 'pepe' clave: 'asd456' que sólo pueda leer la base de datos ecommerce. Verificar que pepe no pueda cambiar la información.
+
+> db.createUser({"user": 'pepe', "pwd": 'asd456',"roles": [{ role: "read", db: "ecommerce" }]})
+> Successfully added user: {
+	"user" : "pepe",
+	"roles" : [
+		{
+			"role" : "read",
+			"db" : "ecommerce"
+		}
+	]
+}
+
+> db.products.find()
+{ "_id" : ObjectId("61eb52cb918abf44959283e0"), "name" : "Producto1", "price" : 1000, "stock" : 0 }
+{ "_id" : ObjectId("61eb52d6918abf44959283e1"), "name" : "Producto2", "price" : 2000, "stock" : 0 }
+{ "_id" : ObjectId("61eb52e2918abf44959283e2"), "name" : "Producto3", "price" : 3000, "stock" : 0 }
+{ "_id" : ObjectId("61eb52ec918abf44959283e3"), "name" : "Producto4", "price" : 4000, "stock" : 100 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b312"), "name" : "Producto5", "price" : 1500, "stock" : 0 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b313"), "name" : "Producto6", "price" : 2500, "stock" : 0 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b314"), "name" : "Producto7", "price" : 3500, "stock" : 0 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b315"), "name" : "Producto8", "price" : 4500, "stock" : 100 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b316"), "name" : "Producto9", "price" : 1700, "stock" : 0 }
+{ "_id" : ObjectId("61eb56d185f2933f8e16b317"), "name" : "Producto10", "price" : 2700, "stock" : 0 }
+{ "_id" : ObjectId("61eb5e4f85f2933f8e16b31e"), "name" : "Producto11", "price" : 3700, "stock" : 0 }
+
+> db.products.insertOne({ "name" : "Producto12", "price" : 4700, "stock" : 0 })
+{
+  "errmsg" : "not authorized on blog to execute command...
+  "codeName" : "Unauthorized"
+}
+
