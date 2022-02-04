@@ -1,0 +1,82 @@
+use restaurants
+
+db.places.insertMany(
+    [
+        {
+            name: 'La Cabaña del Bosque',
+            start_time: '18:00',
+            end_time: '00:00',
+            creation_date: '2003-08-23',
+            city: {
+                name: 'Buenos Aires',
+                country: {name: 'Argentina'}
+            },
+            menus: [{name: 'Pastas'},{name: 'Carnes'},{name: 'Postres'}]
+        },
+        {
+            name: 'La Perla',
+            start_time: '11:00',
+            end_time: '23:00',
+            creation_date: '1998-11-17',
+            city: {
+                name: 'Buenos Aires',
+                country: {
+                    name: 'Agentina'
+                }
+            },
+            menus: [{name: 'Comida Mexiacana'},{name: 'Postres'}]
+        },
+        {
+            name: 'Parrilla Perales',
+            start_time: '12:00',
+            end_time: '00:00',
+            creation_date: '2010-09-05',
+            city: {
+                name: 'Mar del Plata',
+                country: {
+                    name: 'Argentina'
+                }
+            },
+            menus: [{name: 'Carnes'},{name: 'Hamburgesas'},{name: 'Milanesas'}]
+        },
+        {
+            name: 'Trattoria Napolitana',
+            start_time: '18:00',
+            end_time: '01:00',
+            creation_date: '1990-01-01',
+            city: {
+                name: 'Mar del Plata',
+                country: {
+                    name: 'Argentina'
+                }
+            },
+            menus: [{name: 'Pastas'},{name: 'Carnes'},{name: 'Pescados'},{name: 'Postres'}]
+        },
+        {
+            name: 'Picanharia dos Amigos',
+            start_time: '11:30',
+            end_time: '01:30',
+            creation_date: '2009-03-30',
+            city: {
+                name: 'São Paulo',
+                country: {
+                    name: 'Brazil'
+                }
+            },
+            menus: [{name: 'Pescados'},{name: 'Carnes'},{name: 'Postres'}]
+        },
+        {
+            name: 'Camarada Camarão',
+            start_time: '09:00',
+            end_time: '00:00',
+            creation_date: '2012-10-03',
+            city: {
+                name: 'São Paulo',
+                country: {
+                    name: 'Brazil'
+                }
+            },
+            menus: [{name: 'Comida Vegana'}]
+        }
+    ] 
+)
