@@ -1,0 +1,130 @@
+use ecommerce
+
+db.products.insertMany([
+    {
+        "name": "Buzo01",
+        "description": "Buzo ajustado gris",
+	"category": "Buzo",
+        "price": 3000
+    },
+    {
+        "name": "Buzo02",
+        "description": "Buzo suelto marrón, azul y blanco",
+	"category": "Buzo",
+        "price": 3750
+    },
+    {
+        "name": "Buzo03",
+        "description": "Buzo ajustado rosa",
+	"category": "Buzo",
+        "price": 3600
+    },
+    {
+        "name": "Buzo04",
+        "description": "Buzo suelto marrón",
+	"category": "Buzo",
+        "price": 3500
+    },
+    {
+        "name": "Buzo05",
+        "description": "Buzo ajustado gris",
+	"category": "Buzo",
+        "price": 3360
+    },
+    {
+        "name": "Buzo06",
+        "description": "Buzo ajustado negro",
+	"category": "Buzo",
+        "price": 4000
+    },
+    {
+        "name": "Campera01",
+        "description": "Campera azul,amarilla y gris",
+	"category": "Campera",
+        "price": 3500
+    },
+    {
+        "name": "Campera02",
+        "description": "Campera de abrigo negra con capucha",
+	"category": "Campera",
+        "price": 5000
+    },
+    {
+        "name": "Campera03",
+        "description": "Campera de jean azul",
+	"category": "Campera",
+        "price": 4780
+    },
+    {
+        "name": "Campera04",
+        "description": "Campera con capucha suelta gris",
+	"category": "Campera",
+        "price": 3990
+    },
+    {
+        "name": "Pantalon01",
+        "description": "Pantalón jogging negro",
+	"category": "Pantalon",
+        "price": 2560
+    },
+    {
+        "name": "Pantalon02",
+        "description": "Pantalón jogging estilo camuflado negro y gris",
+	"category": "Pantalon",
+        "price": 2690
+    },
+    {
+        "name": "Pantalon03",
+        "description": "Pantalon jogging suelto gris",
+	"category": "Pantalon",
+        "price": 2000,
+    },
+    {
+        "name": "Pantalon04",
+        "description": "Pantalón gabardina negro",
+	"category": "Pantalon",
+        "price": 3290
+    },
+    {
+        "name": "Pantalon05",
+        "description": "Pantalón jogging suelto negro",
+	"category": "Pantalon",
+        "price": 2660
+    },
+    {
+        "name": "Remera01",
+        "description": "Remera con cuello negra con pequeños detalles blancos",
+	"category": "Remera",
+        "price": 1800
+    },
+    {
+        "name": "Remera02",
+        "description": "Remera ajustada gris con estampado pequeño rosa",
+	"category": "Remera",
+        "price": 1800
+    },
+    {
+        "name": "Remera03",
+        "description": "Remera suelta gris y azul",
+	"category": "Remera",
+        "price": 1320
+    },
+    {
+        "name": "Remera04",
+        "description": "Remera ajustada blanca y negra",
+	"category": "Remera",
+        "price": 1990
+    },
+    {
+        "name": "Camisa01",
+        "description": "Camisa de jean negra",
+	"category": "Camisa",
+        "price": 2500
+    },
+    {
+        "name": "Camisa02",
+        "description": "Camisa texturizada gris",
+	"category": "Camisa",
+        "price": 2500
+    }
+])
